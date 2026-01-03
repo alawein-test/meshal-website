@@ -1,0 +1,22 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/hooks/index.ts",
+    "src/stores/index.ts",
+    "src/components/shared/index.ts",
+    "src/projects/index.ts",
+    "src/lib/utils.ts",
+    "src/utils/dataExport.ts",
+    "src/utils/timing.ts"
+  ],
+  "out": "docs/api",
+  "name": "Alawein Platform API",
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "includeVersion": true,
+  "categorizeByGroup": true,
+  "skipErrorChecking": true,
+  "entryPointStrategy": "expand"
+}

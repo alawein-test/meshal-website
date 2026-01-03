@@ -1,0 +1,50 @@
+# robots.txt for Alawein Platform
+# TODO: Update Sitemap URL with actual production domain
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /settings
+Disallow: /profile
+
+# Disallow utility pages
+Disallow: /preview/
+Disallow: /playground/
+
+# Allow search engines to index public pages
+Allow: /portfolio
+Allow: /resume
+Allow: /interactive-resume
+Allow: /projects
+Allow: /projects/simcore
+Allow: /projects/mezan
+Allow: /projects/talai
+Allow: /projects/optilibria
+Allow: /projects/qmlab
+Allow: /pricing
+Allow: /terms
+Allow: /transparency
+Allow: /services
+Allow: /studios
+
+# Sitemap location
+Sitemap: https://alawein.dev/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

@@ -1,0 +1,117 @@
+[
+  {
+    "id": "simcore",
+    "name": "SimCore",
+    "title": "Scientific Computing Platform",
+    "description": "A comprehensive scientific computing and simulation platform with data analysis, visualization, and experiment management capabilities.",
+    "category": "scientific-computing",
+    "version": "1.0.0",
+    "status": "active",
+    "tech": ["React", "TypeScript", "Tailwind CSS", "Recharts", "Three.js"],
+    "features": [
+      "Real-time simulation controls",
+      "Data visualization",
+      "Experiment management",
+      "Progress tracking",
+      "System health metrics"
+    ],
+    "implementation": {
+      "dashboard": "src/projects/pages/simcore/SimCoreDashboard.tsx",
+      "components": "src/projects/pages/simcore/components/",
+      "api": "supabase/functions/simcore-api/index.ts",
+      "table": "simcore_simulations"
+    }
+  },
+  {
+    "id": "mezan",
+    "name": "MEZAN",
+    "title": "Enterprise Automation Platform",
+    "description": "Enterprise workflow automation and business process management system with bilingual Arabic/English support.",
+    "category": "enterprise-automation",
+    "version": "1.0.0",
+    "status": "development",
+    "tech": ["React", "TypeScript", "Tailwind CSS", "Zustand", "TanStack Query"],
+    "features": [
+      "Workflow builder",
+      "Task management",
+      "RTL layout support",
+      "Bilingual interface",
+      "Islamic geometric patterns"
+    ],
+    "implementation": {
+      "dashboard": "src/projects/pages/mezan/MEZANDashboard.tsx",
+      "components": "src/projects/pages/mezan/components/",
+      "api": "supabase/functions/mezan-api/index.ts",
+      "table": "mezan_workflows"
+    }
+  },
+  {
+    "id": "talai",
+    "name": "TalAI",
+    "title": "AI Research Platform",
+    "description": "AI model research, experimentation, and deployment platform with experiment tracking and hyperparameter tuning.",
+    "category": "ai-research",
+    "version": "1.0.0",
+    "status": "beta",
+    "tech": ["React", "TypeScript", "Tailwind CSS", "Recharts"],
+    "features": [
+      "Experiment tracking",
+      "Hyperparameter controls",
+      "Training visualization",
+      "Metrics dashboard",
+      "Model comparison"
+    ],
+    "implementation": {
+      "dashboard": "src/projects/pages/talai/TalAIDashboard.tsx",
+      "components": "src/projects/pages/talai/components/",
+      "api": "supabase/functions/talai-api/index.ts",
+      "table": "talai_experiments"
+    }
+  },
+  {
+    "id": "optilibria",
+    "name": "OptiLibria",
+    "title": "Optimization Algorithms Platform",
+    "description": "Algorithm optimization library with 31+ algorithms for benchmarking and comparison.",
+    "category": "optimization",
+    "version": "1.0.0",
+    "status": "active",
+    "tech": ["React", "TypeScript", "Tailwind CSS", "Recharts"],
+    "features": [
+      "31+ algorithms",
+      "Convergence charts",
+      "Parameter controls",
+      "Benchmarking",
+      "Result comparison"
+    ],
+    "implementation": {
+      "dashboard": "src/projects/pages/optilibria/OptiLibriaDashboard.tsx",
+      "components": "src/projects/pages/optilibria/components/",
+      "api": "supabase/functions/optilibria-api/index.ts",
+      "table": "optilibria_runs"
+    }
+  },
+  {
+    "id": "qmlab",
+    "name": "QMLab",
+    "title": "Quantum Mechanics Laboratory",
+    "description": "Quantum computing education and simulation platform with wave function visualization.",
+    "category": "quantum-mechanics",
+    "version": "1.0.0",
+    "status": "beta",
+    "tech": ["React", "TypeScript", "Tailwind CSS", "Three.js"],
+    "features": [
+      "Wave function display",
+      "Particle visualization",
+      "Quantum state simulation",
+      "Educational interface",
+      "Measurement tools"
+    ],
+    "implementation": {
+      "dashboard": "src/projects/pages/qmlab/QMLabDashboard.tsx",
+      "components": "src/projects/pages/qmlab/components/",
+      "api": "supabase/functions/qmlab-api/index.ts",
+      "table": "qmlab_experiments"
+    }
+  }
+]

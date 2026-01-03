@@ -1,0 +1,325 @@
+{
+  "name": "Alawein Platform Validation Config",
+  "version": "1.0.0",
+  "description": "Comprehensive validation configuration for pre-push checks",
+
+  "phases": {
+    "security": {
+      "enabled": true,
+      "checks": {
+        "npmAudit": {
+          "level": "moderate",
+          "failOnVulnerabilities": true
+        },
+        "secretScan": {
+          "patterns": ["API_KEY", "SECRET", "PASSWORD", "TOKEN", "PRIVATE_KEY", "CLIENT_SECRET"],
+          "excludePaths": ["node_modules", ".git", "dist"]
+        },
+        "envSecurity": {
+          "ensureGitignored": true,
+          "checkForLeaks": true
+        }
+      }
+    },
+
+    "codeQuality": {
+      "enabled": true,
+      "checks": {
+        "console": {
+          "blockProduction": true,
+          "allowedMethods": ["warn", "error"]
+        },
+        "todos": {
+          "maxAllowed": 5,
+          "severity": "warning"
+        },
+        "eslint": {
+          "failOnError": true,
+          "failOnWarning": false
+        },
+        "prettier": {
+          "enforceFormatting": true,
+          "autoFix": false
+        },
+        "imports": {
+          "enforceAliases": true,
+          "noRelativePaths": true
+        }
+      }
+    },
+
+    "designSystem": {
+      "enabled": true,
+      "checks": {
+        "semanticTokens": {
+          "enforceUsage": true,
+          "forbiddenPatterns": [
+            "bg-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-[0-9]+",
+            "text-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-[0-9]+",
+            "border-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-[0-9]+"
+          ],
+          "allowedTokens": [
+            "background",
+            "foreground",
+            "primary",
+            "secondary",
+            "accent",
+            "muted",
+            "card",
+            "popover",
+            "border",
+            "input",
+            "ring",
+            "destructive"
+          ]
+        },
+        "themes": {
+          "validateAllThemes": true,
+          "requiredThemes": ["quantum", "cyberpunk", "pastel", "midnight"]
+        }
+      }
+    },
+
+    "typescript": {
+      "enabled": true,
+      "checks": {
+        "strictMode": {
+          "noImplicitAny": true,
+          "strictNullChecks": true,
+          "noUnusedParameters": true,
+          "noUnusedLocals": true
+        },
+        "anyUsage": {
+          "maxAllowed": 0,
+          "severity": "warning"
+        },
+        "compilation": {
+          "failOnError": true,
+          "checkTypes": true
+        }
+      }
+    },
+
+    "testing": {
+      "enabled": true,
+      "checks": {
+        "unitTests": {
+          "runAll": true,
+          "failOnError": true
+        },
+        "coverage": {
+          "minimum": {
+            "statements": 80,
+            "branches": 75,
+            "functions": 80,
+            "lines": 80
+          },
+          "reportPath": "coverage/coverage-summary.json"
+        },
+        "e2e": {
+          "enabled": false,
+          "framework": "playwright"
+        }
+      }
+    },
+
+    "performance": {
+      "enabled": true,
+      "checks": {
+        "bundleSize": {
+          "maxSizeKB": 500,
+          "warnSizeKB": 300
+        },
+        "imports": {
+          "checkForOptimization": true,
+          "warnOnLargeImports": true
+        },
+        "assets": {
+          "maxFileSizeKB": 100,
+          "optimizeImages": true
+        }
+      }
+    },
+
+    "seo": {
+      "enabled": true,
+      "checks": {
+        "robots": {
+          "required": true,
+          "validateFormat": true,
+          "checkForTodos": true
+        },
+        "sitemap": {
+          "required": true,
+          "validateFormat": true,
+          "checkAllRoutes": true
+        },
+        "metadata": {
+          "requireUniquePerPage": true,
+          "checkOpenGraph": true,
+          "checkTwitterCards": true
+        }
+      }
+    },
+
+    "accessibility": {
+      "enabled": true,
+      "checks": {
+        "wcag": {
+          "level": "AA",
+          "version": "2.1"
+        },
+        "images": {
+          "requireAltText": true,
+          "checkEmptyAlt": true
+        },
+        "aria": {
+          "validateLabels": true,
+          "checkLandmarks": true
+        },
+        "keyboard": {
+          "ensureNavigation": true,
+          "checkFocusIndicators": true
+        }
+      }
+    },
+
+    "dependencies": {
+      "enabled": true,
+      "checks": {
+        "outdated": {
+          "warnOnMajor": true,
+          "failOnSecurity": true
+        },
+        "unused": {
+          "detect": true,
+          "autoRemove": false
+        },
+        "licenses": {
+          "checkCompatibility": true,
+          "allowedLicenses": ["MIT", "Apache-2.0", "BSD-3-Clause", "ISC", "BSD-2-Clause"]
+        }
+      }
+    },
+
+    "build": {
+      "enabled": true,
+      "checks": {
+        "production": {
+          "mustSucceed": true,
+          "checkWarnings": true
+        },
+        "output": {
+          "validateStructure": true,
+          "checkForMissingFiles": true
+        }
+      }
+    },
+
+    "git": {
+      "enabled": true,
+      "checks": {
+        "fileSize": {
+          "maxSizeMB": 5,
+          "warnSizeMB": 2
+        },
+        "commitMessage": {
+          "enforceConventional": true,
+          "allowedTypes": [
+            "feat",
+            "fix",
+            "docs",
+            "style",
+            "refactor",
+            "test",
+            "chore",
+            "perf",
+            "build",
+            "ci",
+            "revert"
+          ]
+        },
+        "branch": {
+          "protectMain": true,
+          "requireFeatureBranch": false
+        }
+      }
+    },
+
+    "documentation": {
+      "enabled": true,
+      "checks": {
+        "readme": {
+          "required": true,
+          "minLines": 50
+        },
+        "api": {
+          "requireDocumentation": true,
+          "checkCompleteness": true
+        },
+        "changelog": {
+          "keepUpdated": true,
+          "enforceFormat": true
+        }
+      }
+    }
+  },
+
+  "hooks": {
+    "pre-commit": {
+      "enabled": true,
+      "runPhases": ["codeQuality", "designSystem", "typescript"]
+    },
+    "pre-push": {
+      "enabled": true,
+      "runPhases": [
+        "security",
+        "codeQuality",
+        "designSystem",
+        "typescript",
+        "testing",
+        "performance",
+        "seo",
+        "accessibility",
+        "dependencies",
+        "build",
+        "git",
+        "documentation"
+      ]
+    }
+  },
+
+  "reporting": {
+    "format": "console",
+    "verbose": true,
+    "showPassedChecks": true,
+    "summaryOnly": false,
+    "outputFile": "validation-report.json"
+  },
+
+  "scripts": {
+    "validate": "bash scripts/pre-push-validation.sh",
+    "validate:quick": "npm run lint && npm run type-check",
+    "validate:full": "bash scripts/pre-push-validation.sh",
+    "fix": "npm run format && npm run lint:fix",
+    "fix:all": "npm run fix && npm audit fix"
+  },
+
+  "exceptions": {
+    "ignorePaths": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "coverage/**",
+      "*.test.ts",
+      "*.test.tsx",
+      "*.spec.ts",
+      "*.spec.tsx"
+    ],
+    "allowedViolations": {
+      "console": ["src/pages/ProjectDetail.tsx"],
+      "anyType": [],
+      "hardcodedColors": []
+    }
+  }
+}

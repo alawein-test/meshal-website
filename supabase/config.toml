@@ -1,0 +1,22 @@
+project_id = "hfbexbargmskuwybaucz"
+
+[functions.simcore-api]
+verify_jwt = false
+
+[functions.talai-api]
+verify_jwt = false
+
+[functions.qmlab-api]
+verify_jwt = false
+
+[functions.optilibria-api]
+verify_jwt = false
+
+[functions.mezan-api]
+verify_jwt = false
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.stripe-webhook]
+verify_jwt = false

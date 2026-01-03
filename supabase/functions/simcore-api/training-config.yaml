@@ -1,0 +1,43 @@
+# SimCore AI Training Configuration
+# Scientific computing simulation optimization
+
+project: simcore
+version: 1.5.2
+ai_training:
+  enabled: true
+  consent_required: true
+
+  data_collection:
+    simulation_configs:
+      enabled: true
+      anonymization: strip_metadata
+      retention_days: 1095 # 3 years
+      purpose: "Optimize simulation performance"
+
+    convergence_patterns:
+      enabled: true
+      anonymization: aggregate_only
+      retention_days: unlimited
+      purpose: "Predict simulation outcomes"
+
+    error_logs:
+      enabled: true
+      anonymization: hash_identifiers
+      retention_days: 180
+      purpose: "Improve stability"
+
+  advanced_features:
+    ml_accelerators:
+      enabled: true
+      user_benefit: "2-10x faster simulations"
+      requires_consent: accept_all
+
+    predictive_suggestions:
+      enabled: true
+      user_benefit: "Smart parameter recommendations"
+      requires_consent: accept_anonymized
+
+    collaborative_learning:
+      enabled: false # Future feature
+      user_benefit: "Learn from community simulations"
+      requires_consent: accept_all

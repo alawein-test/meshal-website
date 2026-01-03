@@ -1,0 +1,63 @@
+{
+  "library": {
+    "name": "Alawein Templates Library",
+    "version": "1.0.0",
+    "description": "Reference templates and metadata for platform implementations",
+    "author": "Alawein",
+    "created": "2024-12-05"
+  },
+  "description": "This directory contains template metadata and documentation. Actual platform implementations are in src/projects/pages/.",
+  "platforms": {
+    "simcore": {
+      "id": "simcore",
+      "name": "SimCore",
+      "description": "Scientific computing and simulation platform",
+      "implementation": "src/projects/pages/simcore/",
+      "api": "supabase/functions/simcore-api/",
+      "table": "simcore_simulations"
+    },
+    "mezan": {
+      "id": "mezan",
+      "name": "MEZAN",
+      "description": "Enterprise workflow automation with Arabic/English support",
+      "implementation": "src/projects/pages/mezan/",
+      "api": "supabase/functions/mezan-api/",
+      "table": "mezan_workflows"
+    },
+    "talai": {
+      "id": "talai",
+      "name": "TalAI",
+      "description": "AI research and model training platform",
+      "implementation": "src/projects/pages/talai/",
+      "api": "supabase/functions/talai-api/",
+      "table": "talai_experiments"
+    },
+    "optilibria": {
+      "id": "optilibria",
+      "name": "OptiLibria",
+      "description": "Optimization algorithms library",
+      "implementation": "src/projects/pages/optilibria/",
+      "api": "supabase/functions/optilibria-api/",
+      "table": "optilibria_runs"
+    },
+    "qmlab": {
+      "id": "qmlab",
+      "name": "QMLab",
+      "description": "Quantum mechanics laboratory",
+      "implementation": "src/projects/pages/qmlab/",
+      "api": "supabase/functions/qmlab-api/",
+      "table": "qmlab_experiments"
+    }
+  },
+  "techStack": {
+    "frontend": ["React 18", "TypeScript", "Tailwind CSS", "Vite"],
+    "state": ["Zustand", "TanStack Query"],
+    "visualization": ["Recharts", "Three.js", "Framer Motion"],
+    "backend": ["Lovable Cloud", "Edge Functions", "PostgreSQL"]
+  },
+  "designSystem": {
+    "tokens": "src/index.css",
+    "tailwind": "tailwind.config.ts",
+    "components": "src/components/ui/"
+  }
+}

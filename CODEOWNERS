@@ -1,0 +1,101 @@
+# CODEOWNERS - Automatic reviewer assignment
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+* @madigitalstudios/core-team
+
+# =============================================================================
+# Documentation
+# =============================================================================
+/docs/                          @madigitalstudios/docs-team
+*.md                            @madigitalstudios/docs-team
+README.md                       @madigitalstudios/core-team @madigitalstudios/docs-team
+CHANGELOG.md                    @madigitalstudios/core-team
+
+# =============================================================================
+# Core Application
+# =============================================================================
+/src/App.tsx                    @madigitalstudios/core-team
+/src/main.tsx                   @madigitalstudios/core-team
+/src/index.css                  @madigitalstudios/design-team
+
+# =============================================================================
+# Components
+# =============================================================================
+/src/components/                @madigitalstudios/frontend-team
+/src/components/ui/             @madigitalstudios/design-team
+/src/components/shared/         @madigitalstudios/core-team
+/src/components/auth/           @madigitalstudios/security-team
+
+# =============================================================================
+# Projects & Platforms
+# =============================================================================
+/src/projects/                  @madigitalstudios/platform-team
+/src/studios/                   @madigitalstudios/platform-team
+
+# =============================================================================
+# Pages
+# =============================================================================
+/src/pages/                     @madigitalstudios/frontend-team
+/src/pages/services/            @madigitalstudios/services-team
+
+# =============================================================================
+# State Management & Hooks
+# =============================================================================
+/src/stores/                    @madigitalstudios/core-team
+/src/hooks/                     @madigitalstudios/frontend-team
+/src/context/                   @madigitalstudios/core-team
+
+# =============================================================================
+# Backend & Integrations
+# =============================================================================
+/supabase/                      @madigitalstudios/backend-team
+/supabase/functions/            @madigitalstudios/backend-team
+/src/integrations/              @madigitalstudios/backend-team
+
+# =============================================================================
+# Configuration
+# =============================================================================
+/tailwind.config.ts             @madigitalstudios/design-team
+/vite.config.ts                 @madigitalstudios/devops-team
+/tsconfig*.json                 @madigitalstudios/devops-team
+/eslint.config.js               @madigitalstudios/devops-team
+/.github/                       @madigitalstudios/devops-team
+
+# =============================================================================
+# Testing
+# =============================================================================
+/tests/                         @madigitalstudios/qa-team
+/playwright.config.ts           @madigitalstudios/qa-team
+/vitest.config.ts               @madigitalstudios/qa-team
+**/*.test.ts                    @madigitalstudios/qa-team
+**/*.spec.ts                    @madigitalstudios/qa-team
+
+# =============================================================================
+# Security-Sensitive Files
+# =============================================================================
+SECURITY.md                     @madigitalstudios/security-team
+/docs/SECURITY.md               @madigitalstudios/security-team
+/docs/PRIVACY.md                @madigitalstudios/security-team @madigitalstudios/legal-team
+.env.example                    @madigitalstudios/security-team
+
+# =============================================================================
+# Scripts & Automation
+# =============================================================================
+/scripts/                       @madigitalstudios/devops-team
+
+# =============================================================================
+# Assets & Design
+# =============================================================================
+/public/                        @madigitalstudios/design-team
+/src/assets/                    @madigitalstudios/design-team
+
+# =============================================================================
+# Templates
+# =============================================================================
+/templates/                     @madigitalstudios/platform-team
+
+# =============================================================================
+# Types
+# =============================================================================
+/src/types/                     @madigitalstudios/core-team

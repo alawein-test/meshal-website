@@ -1,0 +1,43 @@
+# Librex/OptiLibria AI Training Configuration
+# Optimization algorithm performance improvement
+
+project: librex
+version: 1.2.0
+ai_training:
+  enabled: true
+  consent_required: true
+
+  data_collection:
+    problem_definitions:
+      enabled: true
+      anonymization: strip_metadata
+      retention_days: 730
+      purpose: "Optimize algorithm selection"
+
+    convergence_patterns:
+      enabled: true
+      anonymization: aggregate_only
+      retention_days: unlimited
+      purpose: "Improve algorithm performance"
+
+    performance_metrics:
+      enabled: true
+      anonymization: false # Aggregate only
+      retention_days: unlimited
+      purpose: "Benchmark improvements"
+
+  training_pipeline:
+    frequency: monthly
+    validation_split: 0.2
+    test_split: 0.1
+    min_samples: 500
+
+  model_updates:
+    auto_deploy: false
+    rollback_enabled: true
+    a_b_testing: true
+
+  transparency:
+    changelog_published: true
+    performance_metrics_public: true
+    data_usage_report: quarterly

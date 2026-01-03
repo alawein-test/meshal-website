@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit validation..."
+npm run validate:pre-commit
+
+echo "📚 Validating documentation..."
+node scripts/validate-docs.js || echo "⚠️ Documentation validation had issues (non-blocking)"

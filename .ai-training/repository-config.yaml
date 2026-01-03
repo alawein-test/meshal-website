@@ -1,0 +1,43 @@
+# Repository-Level AI Training Configuration
+# Alawein Platform - meshal-website
+
+repository: alawein-platform
+owner: meshal-alawein
+ai_training:
+  global_settings:
+    consent_popup_frequency: first_visit_only
+    consent_expiry_days: 365 # Re-prompt annually
+    gdpr_compliant: true
+    ccpa_compliant: true
+    coppa_safe: true # No training on users under 13
+
+  per_project_configs:
+    - project: simcore
+      config_path: supabase/functions/simcore-api/training-config.yaml
+    - project: talai
+      config_path: supabase/functions/talai-api/training-config.yaml
+    - project: qmlab
+      config_path: supabase/functions/qmlab-api/training-config.yaml
+    - project: mezan
+      config_path: supabase/functions/mezan-api/training-config.yaml
+    - project: optilibria
+      config_path: supabase/functions/optilibria-api/training-config.yaml
+    - project: librex
+      config_path: supabase/functions/librex-api/training-config.yaml
+
+  user_controls:
+    dashboard_url: /settings/ai-privacy
+    export_data_url: /settings/export-my-data
+    delete_data_url: /settings/delete-my-data
+    opt_out_url: /settings/opt-out
+
+  transparency_reports:
+    enabled: true
+    frequency: quarterly
+    publish_url: /transparency/ai-training
+    includes:
+      - total_users_opted_in
+      - data_points_collected
+      - models_trained
+      - performance_improvements
+      - security_incidents: 0

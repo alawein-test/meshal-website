@@ -1,0 +1,43 @@
+# TalAI AI Training Configuration
+# Per-project configuration for AI training data collection
+
+project: talai-litreviewbot
+version: 2.1.0
+ai_training:
+  enabled: true
+  consent_required: true
+
+  data_collection:
+    user_queries:
+      enabled: true
+      anonymization: hash_user_id
+      retention_days: 365
+      purpose: "Improve query understanding"
+
+    paper_selections:
+      enabled: true
+      anonymization: remove_user_context
+      retention_days: 730
+      purpose: "Train relevance ranking"
+
+    feedback:
+      enabled: true
+      anonymization: false # Aggregate only
+      retention_days: unlimited
+      purpose: "Quality metrics"
+
+  training_pipeline:
+    frequency: weekly
+    validation_split: 0.2
+    test_split: 0.1
+    min_samples: 1000
+
+  model_updates:
+    auto_deploy: false # Manual review required
+    rollback_enabled: true
+    a_b_testing: true
+
+  transparency:
+    changelog_published: true
+    performance_metrics_public: true
+    data_usage_report: quarterly

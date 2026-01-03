@@ -1,0 +1,10 @@
+# Build outputs
+dist/
+build/
+node_modules/
+.turbo/
+
+# Generated files
+coverage/
+*.min.js
+*.min.css
